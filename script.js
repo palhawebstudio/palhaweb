@@ -7,7 +7,4 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.getElementById('year').textContent=new Date().getFullYear();
 document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('details').forEach(x=>{if(x!==d)x.open=false})}));
-document.getElementById('leadForm').addEventListener('submit',e=>{
- e.preventDefault();
- document.getElementById('formStatus').textContent='Pedido registado nesta demonstração. Antes de publicar, liga o formulário ao teu email ou serviço de formulários.';
-});
+
