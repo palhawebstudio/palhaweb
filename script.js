@@ -32,6 +32,12 @@ leadForm.addEventListener('submit', async (e) => {
     if (response.ok) {
       formStatus.textContent =
         'Pedido enviado com sucesso. Entraremos em contacto consigo brevemente.';
+      
+    gtag('event', 'generate_lead', {
+        event_category: 'Formulário',
+        event_label: 'Pedido de Orçamento'
+    });
+
       leadForm.reset();
     } else {
       formStatus.textContent =
