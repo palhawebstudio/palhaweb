@@ -51,3 +51,49 @@ leadForm.addEventListener('submit', async (e) => {
     submitButton.innerHTML = originalText;
   }
 });
+
+/* Localised form feedback */
+(function(){
+  const lang = document.documentElement.lang;
+  const m = {
+    'pt-PT': {
+      sending:'A enviar...',
+      success:'Pedido enviado com sucesso. Entraremos em contacto consigo brevemente.',
+      error:'Não foi possível enviar o pedido. Tente novamente ou contacte-nos diretamente.',
+      offline:'Não foi possível enviar o pedido. Verifique a sua ligação e tente novamente.'
+    },
+    'en': {
+      sending:'Sending...',
+      success:'Request sent successfully. We will contact you shortly.',
+      error:'We could not send your request. Please try again or contact us directly.',
+      offline:'We could not send your request. Please check your connection and try again.'
+    },
+    'es': {
+      sending:'Enviando...',
+      success:'Solicitud enviada correctamente. Nos pondremos en contacto contigo pronto.',
+      error:'No hemos podido enviar tu solicitud. Inténtalo de nuevo o contacta con nosotros directamente.',
+      offline:'No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo.'
+    },
+    'fr': {
+      sending:'Envoi...',
+      success:'Demande envoyée avec succès. Nous vous contacterons prochainement.',
+      error:'Nous n’avons pas pu envoyer votre demande. Réessayez ou contactez-nous directement.',
+      offline:'Nous n’avons pas pu envoyer votre demande. Vérifiez votre connexion et réessayez.'
+    }
+  }[lang];
+  if(!m) return;
+  const form=document.getElementById('leadForm');
+  const status=document.getElementById('formStatus');
+  if(!form || !status) return;
+  form.addEventListener('submit',()=>{
+    const button=form.querySelector('button[type="submit"]');
+    if(button) setTimeout(()=>{button.textContent=m.sending;},0);
+    const obs=new MutationObserver(()=>{
+      const t=status.textContent;
+      if(t.includes('Pedido enviado')) status.textContent=m.success;
+      else if(t.includes('Não foi possível enviar o pedido. Tente')) status.textContent=m.error;
+      else if(t.includes('Não foi possível enviar o pedido. Verifique')) status.textContent=m.offline;
+    });
+    obs.observe(status,{childList:true,subtree:true});
+  },{capture:true});
+})();

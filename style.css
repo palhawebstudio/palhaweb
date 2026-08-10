@@ -12,3 +12,43 @@
 footer{max-width:var(--max);margin:auto;padding:55px 28px 30px}.footer-brand{display:flex;gap:15px;align-items:center}.footer-brand div{display:flex;flex-direction:column}.footer-brand strong{font:700 13px Manrope}.footer-brand small{color:var(--muted);font-size:10px;margin-top:5px}.footer-links{display:flex;gap:30px;justify-content:flex-end;margin-top:-25px;font-size:11px;color:#9aa1ab}.footer-bottom{border-top:1px solid var(--line);margin-top:50px;padding-top:20px;display:flex;justify-content:space-between;color:#606772;font-size:9px}.whatsapp{position:fixed;right:20px;bottom:20px;z-index:40;background:#f4f5f7;color:#101216;padding:11px 14px;border-radius:50px;box-shadow:0 10px 30px #0006;display:flex;gap:7px;align-items:center}.whatsapp span{color:#50a929}.whatsapp small{font-weight:700}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:900px){.desktop-nav,.nav-cta{display:none}.menu{display:block;width:36px;height:36px}.menu span{display:block;width:20px;height:1px;background:white;margin:6px}.mobile-nav{position:fixed;z-index:45;top:70px;left:0;right:0;background:#0b0d10;padding:25px 28px;border-bottom:1px solid var(--line);flex-direction:column;gap:20px}.mobile-nav.open{display:flex}.hero{grid-template-columns:1fr;padding-top:130px}.hero-visual{height:420px;max-width:600px;width:100%;margin:auto}.browser{height:340px}.mock-body{padding-top:50px}.mock-body h3{font-size:25px}.phone{width:125px;height:245px}.phone-content{padding-top:45px}.service-grid{grid-template-columns:1fr 1fr}.service-card:nth-child(2){border-right:0}.service-card:nth-child(-n+2){border-bottom:1px solid var(--line)}.process,.faq,.contact{grid-template-columns:1fr;gap:60px}.process-intro{position:static}.include-wrap{grid-template-columns:1fr}.include-wrap aside{border-left:0;border-top:1px solid var(--line)}}
 @media(max-width:600px){.nav{padding:0 18px}.hero,.section{padding-left:20px;padding-right:20px}.hero{padding-top:115px}.hero-copy>p{font-size:15px}.hero-actions{flex-direction:column;align-items:stretch}.trust{gap:12px;justify-content:space-between}.trust small{font-size:8px}.hero-visual{height:330px}.browser{height:260px;width:96%}.mock{padding:16px}.mock-nav span{display:none}.mock-body{padding-top:32px;width:72%}.mock-body h3{font-size:19px}.mock-body p{font-size:7px}.phone{width:98px;height:195px;right:-3px}.phone-content{padding:32px 10px 12px}.phone-content b{font-size:17px}.phone-content small{font-size:7px}.float-tag{left:5px;bottom:18px}.scroll{display:none}.section{padding-top:85px;padding-bottom:85px}.section-head{display:block}.section-head>p{margin-top:20px}.service-grid{grid-template-columns:1fr}.service-card{border-right:0!important;border-bottom:1px solid var(--line)!important;min-height:270px}.service-card:last-child{border-bottom:0!important}.service-card .icon{margin:30px 0 20px}.process{gap:45px}.include-main{grid-template-columns:1fr;padding:10px 20px}.check{border-bottom:1px solid var(--line)!important}.check:last-child{border-bottom:0!important}.faq{gap:40px}.contact{padding-left:20px;padding-right:20px}.contact-form{grid-template-columns:1fr}.contact-form label{grid-column:1}.footer-links{justify-content:flex-start;flex-wrap:wrap;margin-top:35px}.whatsapp small{display:none}.whatsapp{width:43px;height:43px;justify-content:center;padding:0}}
+
+/* Multilingual navigation */
+.language-switcher{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-left:10px;
+  font-size:10px;
+  letter-spacing:.12em;
+  font-weight:700;
+  white-space:nowrap;
+}
+.language-switcher a{
+  color:inherit;
+  text-decoration:none;
+  opacity:.5;
+  transition:opacity .2s ease;
+}
+.language-switcher a:hover,
+.language-switcher a.active{opacity:1}
+.language-switcher span{opacity:.25}
+.mobile-language{
+  display:none;
+  padding:16px 24px 24px;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.mobile-language a{
+  color:inherit;
+  text-decoration:none;
+  opacity:.55;
+  font-size:12px;
+  letter-spacing:.08em;
+  font-weight:700;
+}
+.mobile-language a.active{opacity:1}
+@media(max-width:900px){
+  .language-switcher{display:none}
+  .mobile-language{display:flex}
+}

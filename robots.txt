@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.palhaweb.pt/sitemap.xml
+Sitemap: https://palhaweb.pt/sitemap.xml
